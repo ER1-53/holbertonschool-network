@@ -1,1 +1,16 @@
 #!/usr/bin/env bash
+# Check if an IP address is provided as an argument
+# $# is variable to number of argument, -ne is like !=, $0 name of th script
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 {IP_ADDRESS}"
+    exit 1
+fi
+
+# Get the IP address from the first argument
+# $#(like argc) $0 $1 is a reference to arg (like argv[0], argv[1]) 
+ip_address="$1"
+
+# Ping the IP address 5 times
+# ping for launch packet
+# -c 5 (ping 5 time)
+ping -c 5 "$ip_address"
