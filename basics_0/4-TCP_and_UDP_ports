@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Use netstat to display listening ports and associated processes
-
+# command netstat
 sudo ss -tulp | grep 'LISTEN'
